@@ -1,6 +1,6 @@
-# Remote Deploy
+# Deploy
 
-A simple bash script for packaging and deploying directories to remote servers without needing to install additional software first.
+A bash script for packaging and deploying projects to with a one-line curl-to-bash command.
 
 ## Features
 
@@ -29,6 +29,8 @@ deploy init
 ```bash
 deploy package /path/to/directory
 ```
+
+After packaging, the command will return a one-liner that can be used for deploying the package.
 
 ### Deploy a package
 
