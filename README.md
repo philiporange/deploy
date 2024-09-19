@@ -1,6 +1,6 @@
 # Deploy
 
-A bash script for packaging and deploying projects to with a one-line curl-to-bash command.
+A bash script for packaging and deploying projects with a curl-to-bash command.
 
 ## Features
 
