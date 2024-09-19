@@ -156,7 +156,6 @@ case "${1-}" in
         ;;
     deploy)
         [[ $# -eq 3 ]] || die "Usage: $SCRIPT_NAME deploy <URL> <PASSWORD>"
-        load_config
         deploy_package "$2" "$3"
         ;;
     install)
