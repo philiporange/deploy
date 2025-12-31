@@ -1,0 +1,49 @@
+{
+  "name": "deploy",
+  "short_description": "Bash script for packaging and deploying projects with encrypted curl-to-bash installation.",
+  "long_description": "Deploy is a bash-based deployment tool that enables secure packaging and distribution of projects via curl-to-bash commands. It provides functionality to package directories into encrypted archives using AES-256-CBC encryption, upload them to cloud storage via rclone (commonly used with Backblaze B2), and deploy packages to target systems by downloading and decrypting the archive. The script handles configuration management, includes support for running post-deployment entrypoint scripts, and can be self-installed or updated via the same curl-to-bash mechanism it enables for end users.",
+  "keywords": [
+    "bash",
+    "deployment",
+    "automation",
+    "encryption",
+    "aes-256",
+    "rclone",
+    "backblaze-b2",
+    "packaging",
+    "curl-to-bash",
+    "cli-tool",
+    "devops",
+    "infrastructure",
+    "shell-script",
+    "open-source"
+  ],
+  "primary_language": "bash",
+  "languages": [
+    "bash"
+  ],
+  "frameworks": [
+    "rclone",
+    "openssl"
+  ],
+  "modules": [
+    {
+      "path": "deploy.sh",
+      "description": "Main deployment script providing init, package, deploy, and install commands with encryption and cloud storage integration."
+    }
+  ],
+  "git": {
+    "is_repo": true,
+    "remote_url": "https://github.com/philiporange/deploy.git",
+    "github_name": "philiporange/deploy",
+    "default_branch": "main",
+    "last_commit": "2024-09-19T09:47:55+01:00"
+  },
+  "stats": {
+    "files": 6,
+    "lines_of_code": 166,
+    "size_bytes": 31989
+  },
+  "generated_at": "2025-12-06T23:50:19.568743",
+  "generator_version": "1.0.0"
+}

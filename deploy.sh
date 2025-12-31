@@ -46,7 +46,7 @@ save_config() {
     mkdir -p "$(dirname "$CONFIG_FILE")"
     cat > "$CONFIG_FILE" << EOF
 BUCKET="$BUCKET"
-BUCKET_URL="$BUCKET_URL"
+BUCKET_ENDPOINT="$BUCKET_ENDPOINT"
 RCLONE_DESTINATION="$RCLONE_DESTINATION"
 RCLONE="$RCLONE"
 SCRIPT_URL="$SCRIPT_URL"
@@ -59,7 +59,7 @@ EOF
 init_config() {
     info "Initializing configuration..."
     read -rp "Enter Backblaze B2 Bucket Name: " BUCKET
-    read -rp "Enter Backblaze B2 Bucket URL: " BUCKET_URL
+    read -rp "Enter Backblaze B2 Bucket Endpoint: " BUCKET_ENDPOINT
     read -rp "Enter rclone destination: " RCLONE_DESTINATION
     read -rp "Enter deploy script URL [$SCRIPT_URL]: " SCRIPT_URL_INPUT
     SCRIPT_URL=${SCRIPT_URL_INPUT:-$SCRIPT_URL}
@@ -89,7 +89,7 @@ package_directory() {
     info "Uploading package '$name'..."
     "$RCLONE" copyto "$ciphertext_file" "$RCLONE_DESTINATION/$name" > /dev/null 2>&1 || die "Upload failed."
 
-    info "Deploy with: curl -sSL \"$SCRIPT_URL\" | bash -s deploy \"$BUCKET_URL/$name\" \"$password\""
+    info "Deploy with: curl -sSL \"$SCRIPT_URL\" | bash -s deploy \"https://$BUCKET.$BUCKET_ENDPOINT/$name\" \"$password\""
 }
 
 # Deploy package

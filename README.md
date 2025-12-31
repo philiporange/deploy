@@ -24,6 +24,16 @@ curl -sSL https://raw.githubusercontent.com/philiporange/deploy/refs/heads/main/
 deploy init
 ```
 
+This will prompt you to enter the following information:
+
+- **Backblaze B2 Bucket Name**: The name of the Backblaze B2 bucket where your packaged projects will be stored.
+- **Backblaze B2 Bucket Endpoint**: The endpoint for your Backblaze B2 bucket. This is used to create the deployment command.
+- **rclone destination**: The destination for `rclone` to upload the packaged project to. This should be in the format `remote:path`. For example, `b2:my-cool-bucket/deployments`.
+- **Deploy script URL**: The URL of the `deploy.sh` script itself. This is used in the deployment one-liner. The default should be fine for most users.
+- **rclone path**: The path to your `rclone` executable. The default should be fine for most users.
+
+Your configuration will be saved to `$HOME/.config/remote_deploy.conf`. You can run `deploy init` again at any time to update your settings.
+
 ### Package a directory
 
 ```bash
